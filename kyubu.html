@@ -1,0 +1,117 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Kurafuto/Kyubu</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="/css/normalize.min.css">
+		<link rel="stylesheet" href="/css/main.css">
+		<link rel="stylesheet" href="/css/monokai_sublime.css">
+
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+		<script src="/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+	</head>
+	<body>
+
+		<div class="header-container">
+			<header class="wrapper clearfix">
+				<h1 class="title">
+					Kurafuto/Kyubu
+					<a class="blacken" href="https://github.com/kurafuto/kyubu"><i class="fa fa-fw fa-github"></i></a>
+				</h1>
+				<nav>
+					<ul>
+						<li><a href="/">Kurafuto</a></li>
+						<li><a class="active" href="/kyubu">Kyubu</a></li>
+						<li><a href="https://drone.io/github.com/kurafuto/kurafuto/files">Downloads</a></li>
+					</ul>
+				</nav>
+			</header>
+		</div>
+
+		<div class="main-container">
+			<div class="main wrapper clearfix">
+
+				<article>
+					<header>
+						<h1>
+							What is Kyubu?
+							<a href="https://godoc.org/github.com/kurafuto/kyubu"><img src="https://godoc.org/github.com/kurafuto/kyubu?status.svg" alt="GoDoc"></a>
+						</h1>
+						<p>
+							Kyubu is a parser/serializer for <a href="https://minecraft.net">Minecraft</a> written in <a href="https://golang.org">Golang</a>, intended for developers.
+							It's the workhorse for Kurafuto, turning a useless binary stream into meaningful packets of data.
+						</p>
+						<p>
+							<b>NOTE!</b> Kurafuto - as well as Kyubu - are both a serious work in progress. It's not exactly vaporware, but don't expect to be
+							able to use this in production yet.
+						</p>
+					</header>
+					<section>
+						<h2>Easy to use</h2>
+						<p>
+							<ul>
+							<li><a href="https://github.com/kurafuto/kyubu">Open source, MIT licensed</a>.</li>
+							<li>Written in <a href="https://golang.org">Go</a>.</li>
+							<li>Easy to extend with custom packet definitions at compile-time.</li>
+							<li>Provides a custom tool (<code>protocol_generator</code>) that works with <code>go generate</code> to avoid writing boilerplate.</li>
+							<li>...</li>
+							</ul>
+						</p>
+					</section>
+					<section>
+						<h2>Wraps an existing <code>io.Reader</code></h2>
+						<p>
+						<pre id="kyubu-example"><code>package main
+
+import (
+	"github.com/kurafuto/kyubu/packets"
+	"io"
+	"log"
+)
+
+func main() {
+	// Get this however -- net.Dial, etc.
+	var r io.Reader
+
+	// func NewParser(r io.Reader, state State, dir PacketDirection) *Parser
+	parser := packets.NewParser(r, packets.Login, packets.ClientBound)
+
+	for {
+		packet, err := parser.Next()
+		if err != nil {
+			log.Fatal(err)
+		}
+
+		log.Printf("Packet: %#.2x %T\n", packet.Id(), packet)
+	}
+}
+</code></pre>
+						</p>
+					</section>
+				</article>
+
+				<aside>
+					<h3>Kyubu in a nutshell</h3>
+					<p>
+						<ul>
+						<li>Written in Go.</li>
+						<li>Easy to extend at compile-time.</li>
+						<li>Read meaningful packets out of an <code>io.Reader</code>.</li>
+						<li>Open source, MIT licensed.</li>
+						<li><i>Still a work in progress.</i></li>
+						</ul>
+					</p>
+				</aside>
+
+			</div> <!-- #main -->
+		</div> <!-- #main-container -->
+
+		<script src="/js/highlight.pack.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</body>
+</html>

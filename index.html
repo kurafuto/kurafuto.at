@@ -1,0 +1,118 @@
+<!doctype html>
+<html class="no-js" lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<title>Kurafuto</title>
+		<meta name="description" content="">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
+		<link rel="stylesheet" href="/css/normalize.min.css">
+		<link rel="stylesheet" href="/css/main.css">
+		<link rel="stylesheet" href="/css/monokai_sublime.css">
+
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+
+		<script src="/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+	</head>
+	<body>
+
+		<div class="header-container">
+			<header class="wrapper clearfix">
+				<h1 class="title">
+					Kurafuto
+					<a class="blacken" href="https://github.com/kurafuto"><i class="fa fa-fw fa-github"></i></a>
+				</h1>
+				<nav>
+					<ul>
+						<li><a class="active" href="/">Kurafuto</a></li>
+						<li><a href="/kyubu">Kyubu</a></li>
+						<li><a href="https://drone.io/github.com/kurafuto/kurafuto/files">Downloads</a></li>
+					</ul>
+				</nav>
+			</header>
+		</div>
+
+		<div class="main-container">
+			<div class="main wrapper clearfix">
+
+				<article>
+					<header>
+						<h1>
+							What is Kurafuto?
+							<a href="https://godoc.org/github.com/kurafuto/kurafuto"><img src="https://godoc.org/github.com/kurafuto/kurafuto?status.svg" alt="GoDoc"></a>
+						</h1>
+						<p>
+							Kurafuto is a load-balancer and proxy for <a href="https://minecraft.net">Minecraft</a> written in <a href="https://golang.org">Golang</a>.
+							Trying to be the perfect balance between fully-featured and easily scriptable, Kurafuto aims to please all types of server owners.
+						</p>
+						<p>
+							<b>NOTE!</b> Kurafuto - as well as Kyubu - are both a serious work in progress. It's not exactly vaporware, but don't expect to be
+							able to use this in production yet.
+						</p>
+					</header>
+					<section>
+						<h2>Fully featured</h2>
+						<p>
+							<ul>
+							<li><a href="https://github.com/kurafuto/kurafuto">Open source, MIT licensed</a>.</li>
+							<li>Written in <a href="https://golang.org">Go</a>.</li>
+							<li>Uses less resources than alternatives, as it's not running in the JVM.</li>
+							<li>Designed from the ground up with concurrency patterns in mind.</li>
+							<li>...</li>
+							</ul>
+						</p>
+					</section>
+					<section>
+						<h2>Easily scriptable</h2>
+						<p>
+							<ul>
+							<li>Features an easily extensible Lua scripting engine.</li>
+							<li>Runs like a dream out-of-the-box.</li>
+							<li>Plug and play repository of extensions.</li>
+							<li>Allows you to talk to the backend servers via <i>Plugin Channels</i>.</li>
+							<li>...</li>
+							</ul>
+						</p>
+					</section>
+					<section>
+						<h2>Installation is a breeze</h2>
+						<p>
+						<pre><code class="bash"># Fetch the source and build the Kurafuto binary
+$ go get github.com/kurafuto/kurafuto
+$ cd $GOPATH/src/github.com/kurafuto/kurafuto
+$ go build
+# Modify the configuration to your liking
+$ vim kurafuto.json
+# Run Kurafuto!
+$ ./kurafuto -config="$(pwd)/kurafuto.json"
+</code></pre>
+						</p>
+						<p>
+							Alternatively, simply download one of our pre-compiled (Linux/amd64) binaries from
+							<a href="https://drone.io/github.com/kurafuto/kurafuto/files">drone.io</a>.
+						</p>
+					</section>
+				</article>
+
+				<aside>
+					<h3>Kurafuto in a nutshell</h3>
+					<p>
+						<ul>
+						<li>Written in Go.</li>
+						<li>Uses minimal resources.</li>
+						<li>Easy to extend with Lua.</li>
+						<li>Open source, MIT licensed.</li>
+						<li>Works out-of-the-box.</li>
+						<li><i>Still a work in progress.</i></li>
+						</ul>
+					</p>
+				</aside>
+
+			</div> <!-- #main -->
+		</div> <!-- #main-container -->
+
+		<script src="/js/highlight.pack.js"></script>
+		<script>hljs.initHighlightingOnLoad();</script>
+	</body>
+</html>
